@@ -4,3 +4,10 @@ h1 {
     text-align: center;
     text-decoration: solid;
 }
+
+script {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
