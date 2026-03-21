@@ -5,11 +5,14 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
 
-    <body>
-        <h1>A rendering of a stock image</h1>
-        <canvas id="myCanvas"></canvas>
-        <script type="module" src="/Render.js">
-        </script>
-    </body>
-    
+   <body>
+        <h1>WebGL Render</h1>
+        <button id="imageButton" onclick="show('img')">Show Original Image</button>
+        <button id="renderButton" onclick="show('canvas')">Show Rendered Image</button>
+
+        <img id="img" src="Project Image.png" alt="Original Image" style="display: none;"/>
+        <canvas id="canvas" style="display: none;"></canvas>
+
+        <script type="module" src="Render.js"></script>
+   </body>
 </html>

@@ -11,3 +11,38 @@ script {
     justify-content: center;
     align-items: center;
 }
+
+#imageButton {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#renderButton {
+    display: block;
+    margin: 20px auto 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008CBA; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#img {
+width: 100vw;
+  height: 100vh;
+  object-fit: contain; 
+  display: block;
+}
