@@ -1,8 +1,10 @@
 import * as THREE from 'three';
 import { createHeart } from './objects/heart.js';
 import { createBooks } from './objects/books.js';
-import { lightPosition } from 'three/src/nodes/TSL.js';
 import { createCandle } from './objects/candle.js';
+import { createBowl } from './objects/bowl.js';
+
+import { lightPosition } from 'three/src/nodes/TSL.js';
 import { getControls } from './controls.js';
 
 const loader = new THREE.TextureLoader();
@@ -21,7 +23,7 @@ scene.add(light);
 
 
 const table = loader.load('texture_images/bright-wood.jpg');
-const plane = new THREE.PlaneGeometry(100, 100);
+const plane = new THREE.PlaneGeometry(50, 50);
 const material = new THREE.MeshBasicMaterial({ map: table, side: THREE.DoubleSide });
 const mesh = new THREE.Mesh(plane, material);
 mesh.rotation.x = Math.PI / 2;
@@ -29,28 +31,35 @@ mesh.position.y = -1;
 scene.add(mesh);
 
 const heart = createHeart();
-heart.position.set(0, 0, 0);
-//scene.add(heart);
+heart.position.set(5, 5, -1);
+heart.rotateY(THREE.MathUtils.degToRad(300));
+scene.add(heart);
 
 const books = createBooks();
-books.position.set(3, -5, 2);
-books.scale.set(1.5, 1.5, 1.5);
+books.position.set(7, -20, 0);
+books.scale.set(3, 3, 3);
 books.rotation.y = Math.PI / 6;
 scene.add(books);
 
 const candle = createCandle();
-candle.position.set(3, 7, 1.5);
+candle.position.set(7, 4.5, 3);
 candle.scale.set(0.7, 0.7, 0.7);
 scene.add(candle);
+
+const bowl = createBowl();
+bowl.position.set(-8, 5, 0);
+bowl.scale.set(1.2, 3, 1.5);
+bowl.rotation.x = (THREE.MathUtils.degToRad(180));
+scene.add(bowl);
 
 const controls = getControls();
 scene.add(controls);
 
-camera.position.z = 10;
-camera.position.y = 12;
+camera.position.z = 20;
+camera.position.y = 10;
 camera.position.x = 0;
 
-camera.rotateX(-Math.PI / 10);
+camera.rotateX(THREE.MathUtils.degToRad(-20));
 
 
 function animate() {
