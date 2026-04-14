@@ -13,13 +13,6 @@ const loader = new THREE.TextureLoader();
 
 let glInitialized = false;
 
-console.log("Render.js loaded");
-
-window.show = function(type) {
-  console.log("show called with:", type);
-  // ... rest of your show function
-}
-
 window.show = function(type) {
   document.getElementById('img').style.display = type === 'img' ? 'block' : 'none';
   document.getElementById('canvas').style.display = type === 'canvas' ? 'block' : 'none';
